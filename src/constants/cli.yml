@@ -1,6 +1,6 @@
 common:
   author: &author KnightNiwrem <contact@knightniwrem.com>
-  version: &version 0.1.0
+  version: &version 0.1.1
 
 app:
   name: betterops
