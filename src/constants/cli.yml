@@ -1,0 +1,42 @@
+common:
+  author: &author KnightNiwrem <contact@knightniwrem.com>
+  version: &version 0.1.0
+
+app:
+  name: betterops
+  about: Helper CLI for managing multiple bash env "profiles"
+  author: *author
+  version: *version
+  subcommands:
+    - exec:
+        about: Runs a command with using the current profile
+        author: *author
+        version: *version
+        args:
+          - subcommand:
+              help: Command to run with exec
+              index: 1
+              last: true
+              multiple: true
+              required: true
+    - profile:
+        about: Configure betterops profiles
+        author: *author
+        version: *version
+        subcommands:
+          - configure:
+              about: Create or override a new betterops profile
+              author: *author
+              version: *version
+          - get:
+              about: Get the current betterops profile
+              author: *author
+              version: *version
+          - list:
+              about: List all saved betterops profile
+              author: *author
+              version: *version
+          - set:
+              about: Set the current betterops profile
+              author: *author
+              version: *version
