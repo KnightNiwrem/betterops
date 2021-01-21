@@ -1,5 +1,5 @@
 ---
-name: Build and publish betterops crate
+name: Check betterops crate
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-18.04
     steps:
       - name: Check out Git repository
@@ -18,8 +18,3 @@ jobs:
       - name: Lint source
         run: |
           cargo clippy
-      - name: Publish crate
-        env:
-          CRATES_TOKEN: ${{ secrets.CRATES_TOKEN }}
-        run: |
-          cargo publish --token $CRATES_TOKEN
